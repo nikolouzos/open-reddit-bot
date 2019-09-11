@@ -1,15 +1,18 @@
-import Vue from 'vue';
-import 'vue-resource';
-import App from './App.vue';
-import router from './router';
-import vuetify from './plugins/vuetify';
+import Vue from 'vue'
+import vuetify from '@/plugins/vuetify'
+import 'vue-resource'
 
-Vue.config.productionTip = false;
+import App from './App.vue'
+import router from './router'
+
+import Networking from './models/networking/networking'
+
+Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => (h(App)),
   vuetify,
+  render: h => (h(App)),
 
   // vue-resource config
   http: {
@@ -18,4 +21,9 @@ new Vue({
       Authorization: '',
     },
   },
-}).$mount('#app');
+
+  prototype: {
+    // Add Networking as an instance variable
+    $networking: new Networking(),
+  },
+}).$mount('#app')
