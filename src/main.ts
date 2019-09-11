@@ -5,7 +5,13 @@ import 'vue-resource'
 import App from './App.vue'
 import router from './router'
 
+// Add the global styles
+import './styles/global.stylus'
+
+// Add the Networking instance variable
 import Networking from './models/networking/networking'
+
+Vue.prototype.$networking = new Networking()
 
 Vue.config.productionTip = false
 
@@ -20,10 +26,5 @@ new Vue({
     headers: {
       Authorization: '',
     },
-  },
-
-  prototype: {
-    // Add Networking as an instance variable
-    $networking: new Networking(),
   },
 }).$mount('#app')

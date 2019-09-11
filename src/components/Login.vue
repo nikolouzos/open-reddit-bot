@@ -1,15 +1,15 @@
 <template>
-    <p>Login</p>
+  <div class="absolute-center">
+
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
 export default Vue.extend({
-
 });
 </script>
 
-<style lang="stylus">
-
+<style lang="stylus" scoped>
 </style>
