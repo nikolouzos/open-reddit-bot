@@ -1,34 +1,18 @@
 <template>
   <div class="absolute-center">
-    <v-card elevation="2">
+    <v-card elevation="2" class="px-5 pb-5 text-center">
       <v-card-title>
-        Login using your Reddit account
+        Authenticate using your Reddit account
       </v-card-title>
-      <v-form class="text-center px-5 pb-5">
-        <v-text-field
-          label="Username"
-          hint="fancypants"
-          outlined
-          type="username"
-          prepend-inner-icon="mdi-account-circle-outline"
-          :value="username"
-        />
-        <v-text-field
-          label="Password"
-          hint="verysecurepassword"
-          outlined
-          type="password"
-          prepend-inner-icon="mdi-lock-outline"
-          :value="password"
-        />
-
-        <v-btn
-        depressed
-        large
-        color="primary">
-            Submit
-        </v-btn>
-      </v-form>
+      <v-divider class="pb-5" />
+      <v-btn
+      depressed
+      large
+      dark
+      color="#ff4500"
+      @click="authenticationRequest">
+        Authenticate
+      </v-btn>
     </v-card>
   </div>
 </template>
@@ -43,7 +27,14 @@ export default Vue.extend({
       password: '',
     };
   },
+  methods: {
+    authenticationRequest() {
+      this.$networking.authenticationRequest()
+    },
+  },
 });
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+
+</style>
